@@ -5,7 +5,7 @@ import lombok.*;
 @Setter
 @Getter
 public class Address {
-    private int streetNo;
+    private Integer streetNo;
     private String Street;
     private String city;
     private Province province;
@@ -42,6 +42,23 @@ public class Address {
         }
 
         return true;
+    }
+
+    public Address(int streetNo, String street, String city, String postalCode, Province province) {
+
+        if (isPostalCodeValid(postalCode)) {
+            this.streetNo = streetNo;
+            this.Street = street;
+            this.city = city;
+            this.postalCode = postalCode.toUpperCase();
+            this.province = province;
+        } else {
+            this.streetNo = null;
+            this.Street = null;
+            this.city = null;
+            this.postalCode = null;
+            this.province = null;
+        }
     }
 }
 
