@@ -60,5 +60,11 @@ public class Address {
             this.province = null;
         }
     }
+
+    public void setPostalCode(String postalCode) {
+        if (isPostalCodeValid(postalCode)) {
+            this.postalCode = postalCode.toUpperCase();
+        }
+    }
 }
 
