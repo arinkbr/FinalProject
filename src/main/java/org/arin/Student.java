@@ -15,7 +15,8 @@ public class Student {
     private static int nextId = 1;
 
     public enum Gender {
-        MALE, FEMALE
+        MALE,
+        FEMALE
     }
 }
 
