@@ -21,4 +21,16 @@ public class Department {
 
         return true;
      }
+
+    public Department(String departmentName) {
+
+        if (isDepartmentNameValid(departmentName)) {
+            this.departmentId = String.format("D%02d", nextId);
+            this.departmentName = departmentName;
+            nextId++;
+        } else {
+            this.departmentId = null;
+            this.departmentName = null;
+        }
+    }
 }
