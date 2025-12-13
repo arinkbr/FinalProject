@@ -2,6 +2,9 @@ package org.arin;
 
 import lombok.*;
 
+@Getter
+@ToString
+@EqualsAndHashCode
 public class Department {
     private String departmentId;
     private String departmentName;
