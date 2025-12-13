@@ -4,6 +4,9 @@ import lombok.*;
 
 @Setter
 @Getter
+@ToString
+@EqualsAndHashCode
+@NoArgsConstructor
 public class Address {
     private Integer streetNo;
     private String Street;
@@ -67,4 +70,3 @@ public class Address {
         }
     }
 }
-
