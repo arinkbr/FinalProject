@@ -6,10 +6,9 @@ import lombok.*;
 @Getter
 @ToString
 @EqualsAndHashCode
-@NoArgsConstructor
 public class Address {
     private Integer streetNo;
-    private String Street;
+    private String street;
     private String city;
     private Province province;
     private String postalCode;
@@ -24,7 +23,7 @@ public class Address {
         NL,
         NS,
         PE,
-        SK,
+        SK
     }
 
     public static boolean isPostalCodeValid(String postalCode) {
