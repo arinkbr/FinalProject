@@ -112,4 +112,33 @@ public class Course {
             finalScores.set(i, averages[i]);
         }
     }
+
+    public void displayScores() {
+        System.out.println("Course: " + courseName + "(" + courseId + ")");
+
+        System.out.printf("%-25s", "");
+        for (Assignment a : assignments) {
+            System.out.printf("%-15s", a.getAssignmentName());
+        }
+        System.out.printf("%-15s%n", "Final Score");
+
+        for (int i = 0; i < registeredStudents.size(); i++) {
+            Student s = registeredStudents.get(i);
+            System.out.printf("%-25s", s.getStudentName());
+
+            for (Assignment a : assignments) {
+                Integer score = a.getScores().get(i);
+                System.out.printf("%-15s", score == null ? "-" : score);
+            }
+
+            System.out.printf("%-15s%n", finalScores.get(i));
+        }
+
+        System.out.printf("%-25s", "Average");
+        for (Assignment a : assignments) {
+            a.calcAssignmentAvg();
+            System.out.printf("%-15d", (int) a.getAssignmentAvg());
+        }
+        System.out.println();
+    }
 }
