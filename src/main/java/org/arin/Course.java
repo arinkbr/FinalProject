@@ -141,4 +141,9 @@ public class Course {
         }
         System.out.println();
     }
+
+    public String toSimplifiedString() {
+        String depName = (department == null) ? "None" : department.getDepartmentName();
+        return courseId + " | " + courseName + " | " + credits + " | " + depName;
+    }
 }
