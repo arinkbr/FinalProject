@@ -4,7 +4,9 @@ import lombok.*;
 
 import java.util.ArrayList;
 
-
+@Getter
+@Setter
+@EqualsAndHashCode
 public class Course {
     private String courseId;
     private String courseName;
