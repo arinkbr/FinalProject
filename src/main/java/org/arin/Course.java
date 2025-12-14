@@ -97,7 +97,6 @@ public class Course {
 
         Assignment assignment = new Assignment(Util.toTitleCase(assignmentName),
                 weight,
-                maxScore,
                 registeredStudents.size());
 
         assignments.add(assignment);

@@ -16,7 +16,7 @@ public class Assignment {
     private static int nextId = 1;
     private double assignmentAvg;
 
-    public Assignment(String assignmentName, double weight, int maxScore, int numOfStudent) {
+    public Assignment(String assignmentName, double weight, int numOfStudent) {
         this.assignmentId = String.format("A%03d", nextId++);
         this.assignmentName = assignmentName;
         this.weight = weight;
