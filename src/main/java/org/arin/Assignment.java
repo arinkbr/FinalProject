@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 @Getter
-@EqualsAndHashCode
 public class Assignment {
     private String assignmentId;
     private String assignmentName;
