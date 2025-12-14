@@ -29,5 +29,19 @@ public class Student {
         this.department = department;
         this.registeredCourses = new ArrayList<Course>();
     }
-}
 
+    public boolean registerCourse(Course course) {
+        if (course == null) {
+            return false;
+        }
+
+        if (registeredCourses.contains(course)) {
+            return false;
+        }
+
+        registeredCourses.add(course);
+        course.registerStudent(this);
+
+        return true;
+    }
+}
