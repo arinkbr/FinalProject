@@ -46,12 +46,8 @@ public class Student {
     }
 
     public boolean dropCourse(Course course) {
-        if (course == null) {
-            return false;
-        }
-        if (!registeredCourses.contains(course)) {
-            return false;
-        }
+        if (course == null) return false;
+        if (!registeredCourses.contains(course)) return false;
 
         registeredCourses.remove(course);
         course.getRegisteredStudents().remove(this);
