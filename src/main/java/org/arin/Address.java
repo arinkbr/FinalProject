@@ -50,13 +50,13 @@ public class Address {
 
         if (isPostalCodeValid(postalCode)) {
             this.streetNo = streetNo;
-            this.Street = street;
+            this.street = street;
             this.city = city;
             this.postalCode = postalCode.toUpperCase();
             this.province = province;
         } else {
             this.streetNo = null;
-            this.Street = null;
+            this.street = null;
             this.city = null;
             this.postalCode = null;
             this.province = null;
