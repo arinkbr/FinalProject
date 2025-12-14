@@ -101,4 +101,15 @@ public class Course {
         assignments.add(assignment);
         return true;
     }
+
+    public void generateScores() {
+        for (Assignment a : assignments) {
+            a.generateRandomScore();
+        }
+
+        int[] averages = calcStudentsAverage();
+        for (int i = 0; i < averages.length; i++) {
+            finalScores.set(i, averages[i]);
+        }
+    }
 }
