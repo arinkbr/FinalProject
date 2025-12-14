@@ -25,4 +25,20 @@ public class Assignment {
 
         this.assignmentAvg = 0.0;
     }
+
+    public void calcAssignmentAvg() {
+        int sum = 0;
+
+        for (Integer score : scores) {
+            if (score != null) {
+                sum += score;
+            }
+        }
+
+        if (scores.isEmpty()) {
+            assignmentAvg = 0;
+        } else {
+            assignmentAvg = sum / (double) scores.size();
+        }
+    }
 }
