@@ -14,4 +14,6 @@ public class Course {
     private ArrayList<Student> registeredStudents;
 
     private static int nextId = 1;
+
+    private ArrayList<Integer> finalScores;
 }
