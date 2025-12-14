@@ -37,4 +37,14 @@ public class Course {
         this.registeredStudents = new ArrayList<>();
         this.finalScores = new ArrayList<>();
     }
+
+    public boolean isAssignmentWeightValid() {
+        double sum = 0;
+
+        for (Assignment assignment : assignments) {
+            sum += assignment.getWeight();
+        }
+
+        return sum == 100;
+    }
 }
