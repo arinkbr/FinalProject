@@ -165,9 +165,10 @@ public class Course {
 
         result += "Registered Students:\n";
         for (Student s : registeredStudents) {
+            String sDepName = (s.getDepartment() == null) ? "None" : s.getDepartment().getDepartmentName();
             result += "  " + s.getStudentId() + " - "
                     + s.getStudentName() + " - "
-                    + depName + "\n";
+                    + sDepName + "\n";
         }
 
         result += "Assignment weights valid? " + isAssignmentWeightValid();
