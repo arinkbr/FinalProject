@@ -60,4 +60,23 @@ public class Student {
         return studentId + " | " + studentName + " | " + depName;
     }
 
+    @Override
+    public String toString() {
+        String depName = (department == null) ? "None" : department.getDepartmentName();
+
+        String result = "";
+        result += "Student ID: " + studentId + "\n";
+        result += "Student Name: " + studentName + "\n";
+        result += "Gender: " + gender + "\n";
+        result += "Address: " + address + "\n";
+        result += "Department: " + depName + "\n";
+
+        result += "Registered Courses:\n";
+        for (Course c : registeredCourses) {
+            String cDepName = (c.getDepartment() == null) ? "None" : c.getDepartment().getDepartmentName();
+            result += "  " + c.getCourseId() + " - " + c.getCourseName() + " - " + cDepName + "\n";
+        }
+
+        return result;
+    }
 }
