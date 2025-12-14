@@ -4,6 +4,8 @@ import lombok.*;
 
 import java.util.ArrayList;
 
+@Getter
+@EqualsAndHashCode
 public class Student {
     private String studentId;
     private String studentName;
