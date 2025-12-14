@@ -175,4 +175,8 @@ public class Course {
 
         return result;
     }
+
+    public void setCourseName(String courseName) {
+        this.courseName = Util.toTitleCase(courseName);
+    }
 }
