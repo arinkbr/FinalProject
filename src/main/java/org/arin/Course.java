@@ -146,4 +146,31 @@ public class Course {
         String depName = (department == null) ? "None" : department.getDepartmentName();
         return courseId + " | " + courseName + " | " + credits + " | " + depName;
     }
+
+    @Override
+    public String toString() {
+        String depName = (department == null) ? "None" : department.getDepartmentName();
+
+        String result = "";
+        result += "Course ID: " + courseId + "\n";
+        result += "Course Name: " + courseName + "\n";
+        result += "Credits: " + credits + "\n";
+        result += "Department: " + depName + "\n";
+
+        result += "Assignments:\n";
+        for (Assignment a : assignments) {
+            result += "  " + a + "\n";
+        }
+
+        result += "Registered Students:\n";
+        for (Student s : registeredStudents) {
+            result += "  " + s.getStudentId() + " - "
+                    + s.getStudentName() + " - "
+                    + depName + "\n";
+        }
+
+        result += "Assignment weights valid? " + isAssignmentWeightValid();
+
+        return result;
+    }
 }
