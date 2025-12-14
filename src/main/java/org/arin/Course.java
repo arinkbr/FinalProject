@@ -87,17 +87,15 @@ public class Course {
     }
 
     public boolean addAssignment(String assignmentName, double weight, int maxScore) {
-        if (assignmentName == null) {
+        if (assignmentName == null || weight <= 0 || maxScore <= 0) {
             return false;
         }
 
-        if (weight <= 0) {
-            return false;
-        }
-
-        Assignment assignment = new Assignment(Util.toTitleCase(assignmentName),
+        Assignment assignment = new Assignment(
+                Util.toTitleCase(assignmentName),
                 weight,
-                registeredStudents.size());
+                registeredStudents.size()
+        );
 
         assignments.add(assignment);
         return true;
