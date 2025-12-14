@@ -5,7 +5,6 @@ import lombok.*;
 import java.util.ArrayList;
 
 @Getter
-@Setter
 @EqualsAndHashCode
 public class Student {
     private String studentId;
@@ -79,5 +78,9 @@ public class Student {
         }
 
         return result;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = Util.toTitleCase(studentName);
     }
 }
