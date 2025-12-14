@@ -83,4 +83,22 @@ public class Course {
 
         return averages;
     }
+
+    public boolean addAssignment(String assignmentName, double weight, int maxScore) {
+        if (assignmentName == null) {
+            return false;
+        }
+
+        if (weight <= 0) {
+            return false;
+        }
+
+        Assignment assignment = new Assignment(Util.toTitleCase(assignmentName),
+                weight,
+                maxScore,
+                registeredStudents.size());
+
+        assignments.add(assignment);
+        return true;
+    }
 }
