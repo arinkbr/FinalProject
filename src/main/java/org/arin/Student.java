@@ -54,4 +54,10 @@ public class Student {
 
         return true;
     }
+
+    public String toSimplifiedString() {
+        String depName = (department == null) ? "None" : department.getDepartmentName();
+        return studentId + " | " + studentName + " | " + depName;
+    }
+
 }
