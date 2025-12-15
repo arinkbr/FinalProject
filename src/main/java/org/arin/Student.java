@@ -31,6 +31,11 @@ public class Student {
         this.registeredCourses = new ArrayList<Course>();
     }
 
+    /**
+     * Adds the course to the student's list AND adds the student to the course list.
+     * @param course the course to register
+     * @return true if success, false if null or already registered
+     */
     public boolean registerCourse(Course course) {
         if (course == null) {
             return false;
@@ -46,6 +51,11 @@ public class Student {
         return true;
     }
 
+    /**
+     * Removes the course from the student's list AND removes the student from the course list.
+     * @param course the course to drop
+     * @return true if success, false if null or not registered
+     */
     public boolean dropCourse(Course course) {
         if (course == null) return false;
         if (!registeredCourses.contains(course)) return false;
@@ -56,6 +66,10 @@ public class Student {
         return true;
     }
 
+    /**
+     * Returns a simplified student string containing only: studentId, studentName, departmentName.
+     * @return simplified student info line
+     */
     public String toSimplifiedString() {
         String depName = (department == null) ? "None" : department.getDepartmentName();
         return studentId + " | " + studentName + " | " + depName;
@@ -81,6 +95,10 @@ public class Student {
         return result;
     }
 
+    /**
+     * Sets student name in Title Case
+     * @param studentName new name
+     */
     public void setStudentName(String studentName) {
         this.studentName = Util.toTitleCase(studentName);
     }

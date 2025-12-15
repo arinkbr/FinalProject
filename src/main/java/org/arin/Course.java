@@ -40,6 +40,10 @@ public class Course {
         this.finalScores = new ArrayList<>();
     }
 
+    /**
+     * Checks if the sum of assignment weights equals 100.
+     * @return true if total weight is 100, false otherwise
+     */
     public boolean isAssignmentWeightValid() {
         double sum = 0;
 
@@ -50,6 +54,11 @@ public class Course {
         return sum == 100;
     }
 
+    /**
+     * Adds the student, adds a null score slot in each assignment, and adds a null final score.
+     * @param student the student to register
+     * @return true if success, false if null or already registered
+     */
     public boolean registerStudent(Student student) {
         if (student == null) return false;
         if (registeredStudents.contains(student))
@@ -66,6 +75,10 @@ public class Course {
         return true;
     }
 
+    /**
+     * Calculates the weighted average for each student in the course
+     * @return an array of final scores
+     */
     public int[] calcStudentsAverage() {
         int size = registeredStudents.size();
         int[] averages = new int[size];
@@ -86,6 +99,15 @@ public class Course {
         return averages;
     }
 
+    /**
+     * Adds a new assignment to the course.
+     * The signature includes maxScore because the spec requires it.
+     * Since Assignment does not store maxScore in this version, we only validate it.
+     * @param assignmentName assignment name
+     * @param weight assignment weight
+     * @param maxScore must be positive
+     * @return true if added, false otherwise
+     */
     public boolean addAssignment(String assignmentName, double weight, int maxScore) {
         if (assignmentName == null || weight <= 0 || maxScore <= 0) {
             return false;
@@ -101,6 +123,9 @@ public class Course {
         return true;
     }
 
+    /**
+     * Generates random scores for every assignment and stores each student's final score.
+     */
     public void generateScores() {
         for (Assignment a : assignments) {
             a.generateRandomScore();
@@ -112,6 +137,10 @@ public class Course {
         }
     }
 
+    /**
+     * Displays the course scores in a table format in the console.
+     * Shows each assignment score, final score, and assignment averages.
+     */
     public void displayScores() {
         System.out.println("Course: " + courseName + "(" + courseId + ")");
 
@@ -141,6 +170,10 @@ public class Course {
         System.out.println();
     }
 
+    /**
+     * Returns a simplified course string with: courseId, courseName, credits, departmentName.
+     * @return
+     */
     public String toSimplifiedString() {
         String depName = (department == null) ? "None" : department.getDepartmentName();
         return courseId + " | " + courseName + " | " + credits + " | " + depName;
@@ -174,6 +207,10 @@ public class Course {
         return result;
     }
 
+    /**
+     * Sets course name to title case
+     * @param courseName
+     */
     public void setCourseName(String courseName) {
         this.courseName = Util.toTitleCase(courseName);
     }

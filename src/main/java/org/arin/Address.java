@@ -26,6 +26,12 @@ public class Address {
         SK
     }
 
+    /**
+     * Checks if a postal code is valid.
+     * Format must be letter-digit-letter-digit-letter-digit, length 6.
+     * @param postalCode the input postal code
+     * @return true if valid, false otherwise
+     */
     public static boolean isPostalCodeValid(String postalCode) {
         if (postalCode == null || postalCode.length() != 6) {
             return false;
@@ -63,6 +69,10 @@ public class Address {
         }
     }
 
+    /**
+     * Sets the postal code only if it is valid and stores it in uppercase
+     * @param postalCode the new postal code
+     */
     public void setPostalCode(String postalCode) {
         if (isPostalCodeValid(postalCode)) {
             this.postalCode = postalCode.toUpperCase();
